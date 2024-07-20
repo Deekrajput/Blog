@@ -1,0 +1,68 @@
+/* CSS for CreatePost component */
+.createPostContainer {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #ffffff, #f5f5f5); /* Light gradient background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input {
+    padding: 12px;
+    border: 2px solid #5e3f64; /* Purple border to match theme */
+    border-radius: 8px; /* Rounded corners for consistency */
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+    background: #f9f9f9; /* Light background for input fields */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.input:focus {
+    border-color: #3e2a4a; /* Darker purple on focus */
+    box-shadow: 0 0 6px rgba(62, 42, 74, 0.5); /* Purple shadow on focus */
+}
+
+.textarea {
+    padding: 12px;
+    border: 2px solid #5e3f64; /* Purple border to match theme */
+    border-radius: 8px; /* Rounded corners for consistency */
+    height: 150px; /* Adjust height as needed */
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+    background: #f9f9f9; /* Light background for text area */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.textarea:focus {
+    border-color: #3e2a4a; /* Darker purple on focus */
+    box-shadow: 0 0 6px rgba(62, 42, 74, 0.5); /* Purple shadow on focus */
+}
+
+.button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #5e3f64, #4d2e4a); /* Match button color with theme */
+    color: #fff; /* White text for contrast */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
+}
+
+.button:hover {
+    background: linear-gradient(to right, #4d2e4a, #3e2a4a); /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.imagePreview {
+    max-width: 100%;
+    height: auto;
+    margin-top: 16px;
+    border: 2px solid #5e3f64; /* Purple border to match theme */
+    border-radius: 8px; /* Rounded corners for consistency */
+    background: #f9f9f9; /* Light background for image preview */
+}
