@@ -1,0 +1,148 @@
+/* Profile container */
+.profile_container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f5f5, #e0e0e0); /* Soft gradient background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+}
+
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #5e3f64, #3e2a4a); /* Gradient background for navbar */
+    padding: 20px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+}
+
+.navbar h1 {
+    color: #ffffff; /* White text color */
+    margin: 0;
+}
+
+.nav_buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.create_btn,
+.white_btn {
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.create_btn {
+    color:  #5e3f64;
+    border: 2px solid #5e3f64; /* Purple border */
+}
+
+.create_btn:hover {
+    background: linear-gradient(to right, #e0e0e0, #f5f5f5);/* Darker gradient on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.white_btn {
+    background: linear-gradient(to right, #ffffff, #f5f5f5); /* Gradient background for white button */
+    color: #5e3f64; /* Purple text color */
+    border: 2px solid #5e3f64; /* Purple border */
+}
+
+.white_btn:hover {
+    background: linear-gradient(to right, #e0e0e0, #f5f5f5); /* Darker gradient on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.profile_details {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+.profile_details h2 {
+    color: #5e3f64; /* Purple text color */
+}
+
+.empty_state {
+    text-align: center;
+    color: #333; /* Darker text color */
+}
+
+.empty_state h3 {
+    margin-bottom: 10px;
+    color: #5e3f64; /* Purple text color */
+}
+
+.blog_post {
+    background: #ffffff;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 12px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blog_content h3 {
+    margin: 0;
+    color: #5e3f64; /* Purple text color */
+}
+
+.blog_date {
+    color: #999; /* Grey text color for date */
+    font-size: 12px;
+}
+
+.blog_buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.update_btn,
+.delete_btn {
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.update_btn {
+    background: linear-gradient(to right, #5e3f64, #4d2e4a); /* Gradient background for update button */
+    color: white;
+    border: 2px solid #5e3f64; /* Purple border */
+}
+
+.update_btn:hover {
+    background: linear-gradient(to right, #4d2e4a, #3e2a4a); /* Darker gradient on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.delete_btn {
+    background: #f34646; /* Error color for delete button */
+    color: white;
+    border: 2px solid #f34646; /* Error border */
+}
+
+.delete_btn:hover {
+    background: #e63939; /* Darker error color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

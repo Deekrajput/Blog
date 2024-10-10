@@ -1,0 +1,132 @@
+/* Modal backdrop styling */
+.modalBackdrop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1050; /* Ensure it appears above other content */
+}
+
+/* Modal content styling */
+.modalContent {
+    background-color: #ffffff; /* Light background for the modal */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Restrict the width of the modal */
+    width: 100%; /* Ensure it uses full width up to max-width */
+    margin: 20px; /* Add margin for spacing from edges */
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+}
+
+/* Modal header styling */
+.modalHeader {
+    background-color: #5e3f64; /* Updated to match theme */
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Modal title styling */
+.modalTitle {
+    font-size: 1.5rem; /* Scalable font size */
+    font-weight: bold;
+    margin: 0; /* Remove default margin */
+}
+
+/* Close button styling */
+.btnClose {
+    background: none; /* Remove default background */
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem; /* Slightly larger close button */
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.btnClose:hover {
+    color: #e0e0e0; /* Lighter color on hover */
+}
+
+/* Modal body styling */
+.modalBody {
+    padding: 20px;
+    max-height: 60vh; /* Restrict the height to prevent overflow */
+    overflow-y: auto; /* Add scroll if content overflows */
+    flex: 1; /* Allow the body to grow and take available space */
+}
+
+/* Form styling */
+.formLabel {
+    font-size: 1rem; /* Scalable font size */
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px; /* Space between label and input */
+}
+
+.formControl {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 12px; /* Larger padding for better input area */
+    font-size: 1rem; /* Scalable font size */
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* Modal footer styling */
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Secondary button styling */
+.btnSecondary {
+    background-color: #6c757d; /* Secondary button color */
+    border: none;
+    padding: 12px 24px; /* Larger padding for better button area */
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px; /* Space between buttons */
+}
+
+.btnSecondary:hover {
+    background-color: #5a6268; /* Darker secondary button color on hover */
+}
+
+/* Primary button styling */
+.btnPrimary {
+    background-color: #5e3f64; /* Primary button color */
+    border: none;
+    padding: 12px 24px; /* Larger padding for better button area */
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Add margin to the right of the primary button to ensure spacing */
+.btnPrimary + .btnSecondary {
+    margin-right: 10px; /* Adjust spacing as needed */
+}
+
+.btnPrimary:hover {
+    background-color: #4d2e4a; /* Darker primary button color on hover */
+}
+
+/* Button hidden for modal trigger */
+.d-none {
+    display: none;
+}
