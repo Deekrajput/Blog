@@ -3,8 +3,8 @@ import blogcontext from './blogcontext';
 
 const BlogState = (props) => {
 
-  const host = 'https://vercel.live/link/blog-pmc7-deekshas-projects-a29404f9.vercel.app?via=project-dashboard-alias-list&p=1'|| 'http://localhost:5000';
-  // const host = 'http://localhost:5000';
+  // const host = 'https://vercel.live/link/blog-pmc7-deekshas-projects-a29404f9.vercel.app?via=project-dashboard-alias-list&p=1'|| 'http://localhost:5000';
+  const host = 'http://localhost:5000';
 
   const [blogp, setBlogp] = useState([]); // Initialize as an empty array
   const [currentPost, setCurrentPost] = useState(null);
