@@ -5,24 +5,13 @@ import Profile from "./components/profile/Profile";
 import CreatePost from "./components/Posts/Createpost";
 import BlogState from "./context/blogstate";
 import Update from './components/update/Update';
-import PrivateRoute from  "./Private"; // 
+import PrivateRoute from "./Private"; 
+
 const AppContent = () => {
-
-    // const [loading, setLoading] = useState(true);
-    // const [user, setUser] = useState(localStorage.getItem("token"));
-    // const navigate = useNavigate();
-
-    // if (loading) {
-    //     return <div>Loading...</div>;
-    // }
-
-
-
     return (
         <Routes>
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
-
             <Route path="/" element={<Navigate to="/login" replace />} />
             <Route 
                 path="/profile" 

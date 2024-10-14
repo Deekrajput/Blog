@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import blogcontext from './blogcontext';
 
 const BlogState = (props) => {
@@ -15,7 +15,7 @@ const BlogState = (props) => {
   const getPosts = async () => {
     try {
       const response = await fetch(`${host}/api/post/allposts`, {
-        method: 'POST', // Ensure this matches your backend route
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'auth-token': getAuthToken(),
@@ -24,33 +24,38 @@ const BlogState = (props) => {
 
       if (response.ok) {
         const json = await response.json();
-        // Ensure json is an array
         setBlogp(Array.isArray(json) ? json : []);
       } else {
-        console.error('Failed to fetch posts');
+        console.error('Failed to fetch posts:', response.statusText);
       }
     } catch (error) {
       console.error('Error fetching posts:', error);
     }
   };
 
-  // Add a Post
-  const addPosts = async (title, content) => {
+  // Add a Post with an image
+  const addPost = async (title, content, image) => {
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('content', content);
+    if (image) {
+      formData.append('image', image); // Append image if provided
+    }
+
     try {
       const response = await fetch(`${host}/api/post/createpost`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
           'auth-token': getAuthToken(),
         },
-        body: JSON.stringify({ title, content }),
+        body: formData,
       });
 
       if (response.ok) {
         const post = await response.json();
-        setBlogp((prevBlogp) => [...prevBlogp, post]); // Create a new array
+        setBlogp((prevBlogp) => [...prevBlogp, post]);
       } else {
-        console.error('Failed to create post');
+        console.error('Failed to create post:', response.statusText);
       }
     } catch (error) {
       console.error('Error creating post:', error);
@@ -69,10 +74,9 @@ const BlogState = (props) => {
       });
 
       if (response.ok) {
-        // Create a new array excluding the deleted post
         setBlogp((prevBlogp) => prevBlogp.filter((post) => post._id !== postId));
       } else {
-        console.error('Failed to delete the post');
+        console.error('Failed to delete the post:', response.statusText);
       }
     } catch (error) {
       console.error('Error deleting post:', error);
@@ -81,26 +85,31 @@ const BlogState = (props) => {
 
   // Update a Post
   const updatePost = async (id, title, content, image) => {
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('content', content);
+    if (image) {
+      formData.append('image', image); // Append image if provided
+    }
+
     try {
       const response = await fetch(`${host}/api/post/updatepost/${id}`, {
         method: 'PUT',
         headers: {
-          'Content-Type': 'application/json',
           'auth-token': getAuthToken(),
         },
-        body: JSON.stringify({ title, content, image }),
+        body: formData,
       });
 
       if (response.ok) {
         const json = await response.json();
-
         setBlogp((prevBlogp) =>
           prevBlogp.map((post) =>
-            post._id === id ? { ...post, title, content, image } : post
+            post._id === id ? { ...post, title, content, image: json.image || post.image } : post
           )
         );
       } else {
-        console.error('Failed to update the post');
+        console.error('Failed to update the post:', response.statusText);
       }
     } catch (error) {
       console.error('Error updating post:', error);
@@ -112,8 +121,12 @@ const BlogState = (props) => {
     setCurrentPost(post);
   };
 
+  useEffect(() => {
+    getPosts();
+  }, []);
+
   return (
-    <blogcontext.Provider value={{ blogp, getPosts, addPosts, deletePost, updatePost, setCurrentPostData, currentPost }}>
+    <blogcontext.Provider value={{ blogp, getPosts, addPost, deletePost, updatePost, setCurrentPostData, currentPost }}>
       {props.children}
     </blogcontext.Provider>
   );
