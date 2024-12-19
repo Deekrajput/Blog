@@ -55,7 +55,7 @@ const Profile = () => {
                                 {post.image && (
                                     <div className={styles.image_container}>
                                         <img 
-                                            src={`http://localhost:5000/${post.image}`} 
+                                            src={`http://localhost:5000${post.image}`} 
                                             alt={post.title} 
                                             className={styles.blog_image} 
                                             onError={(e) => { e.target.onerror = null; e.target.src='path_to_placeholder_image'; }} 
